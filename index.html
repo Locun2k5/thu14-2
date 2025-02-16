@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine cho Meocute</title>
+    <style>
+        body {
+            background-color: #ffcccb;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .message,
+        .thank-you-message {
+            font-size: 24px;
+            color: #d63384;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            width: 60%;
+            line-height: 1.5;
+        }
+
+        .word {
+            opacity: 0;
+            display: inline-block;
+            position: relative;
+            animation: dropIn 0.5s forwards;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            animation: float 4s linear infinite;
+        }
+
+        @keyframes dropIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        .envelope {
+            background: #d63384;
+            border: 3px solid #ffcccb;
+            padding: 15px;
+            width: 150px;
+            height: 90px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 90px;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .small-heart {
+            width: 75px;
+            height: 75px;
+            line-height: 75px;
+            font-size: 30px;
+            border-radius: 50%;
+            background: #ffcccb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="envelope" onclick="openMessage()">💌</div>
+    <div class="message" id="message">
+        <span class="word">Chúc</span> <span class="word">mừng</span> <span class="word">Valentine,</span> <span
+            class="word">Meocute</span> <span class="word">yêu</span> <span class="word">dấu!</span> 💖<br><br>
+        <span class="word">Tớ</span> <span class="word">chúc</span> <span class="word">bạn</span> <span
+            class="word">nhỏ</span> <span class="word">của</span> <span class="word">tớ</span> <span
+            class="word">sẽ</span> <span class="word">có</span> <span class="word">thật</span> <span
+            class="word">nhiều</span> <span class="word">niềm</span> <span class="word">vui,</span>
+        <span class="word">luôn</span> <span class="word">vui</span> <span class="word">vẻ,</span> <span
+            class="word">hạnh</span> <span class="word">phúc.</span><br>
+        <span class="word">Tớ</span> <span class="word">mong</span> <span class="word">rằng</span> <span
+            class="word">lời</span> <span class="word">chúc</span> <span class="word">này</span> <span
+            class="word">sẽ</span> <span class="word">khiến</span> <span class="word">cậu</span> <span
+            class="word">vui</span> <span class="word">vẻ</span> <span class="word">và</span> <span
+            class="word">gặp</span> <span class="word">nhìu</span> <span class="word">may</span> <span
+            class="word">mắn.</span><br>
+        <span class="word">Tớ</span> <span class="word">rất</span> <span class="word">mong</span> <span
+            class="word">rằng</span> <span class="word">năm</span> <span class="word">sau</span> <span
+            class="word">và</span> <span class="word">nhiều</span> <span class="word">năm</span> <span
+            class="word">sau</span> <span class="word">nữa</span> <span class="word">người</span> <span
+            class="word">tớ</span> <span class="word">chúc</span> <span class="word">vẫn</span> <span
+            class="word">sẽ</span> <span class="word">là</span> <span class="word">cậu.</span><br>
+        <span class="word">Mai</span> <span class="word">yeuuuu</span> <span class="word">>3</span><br><br>
+        <div class="small-heart" onclick="redirectToFacebook()">🤍</div>
+    </div>
+    <div class="thank-you-message">Cảm ơn đã ở bên cạnh anh 💕</div>
+
+    <script>
+        function openMessage() {
+            document.querySelector(".message").style.display = "block";
+            document.querySelector(".envelope").style.display = "none";
+            let words = document.querySelectorAll('.word');
+            words.forEach((word, index) => {
+                setTimeout(() => {
+                    word.style.animationDelay = `${index * 0.2}s`;
+                }, 0);
+            });
+        }
+        function redirectToFacebook() {
+            window.location.href = "https://www.facebook.com/profile.php?id=100084634083631";
+        }
+    </script>
+</body>
+
+</html>
